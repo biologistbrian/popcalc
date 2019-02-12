@@ -53,7 +53,7 @@ class StaticPagesController < ApplicationController
 			bc1sitekpe = Kernelperear.find_by(site:proj.bc1Site).avgkernelperear
 			f1sitekpe = Kernelperear.find_by(site:proj.f1Site).avgkernelperear
 			nssitekpe = Kernelperear.find_by(site:proj.nsSite).avgkernelperear
-			filepath = Rails.root.join('lib', 'rscripts', 'rscript.R')
+			filepath = "#{Rails.root}/lib/rscripts/rscript.R"
 			output = `Rscript --vanilla #{filepath} #{selgen} #{certainty} #{traitcount} #{f3desired} #{f3adjustment} #{bc4target} #{bc3target} #{bc2target} #{bc1target} #{initrecovery} #{bc4sitefactor} #{bc4sitekpe} #{bc3sitefactor} #{bc3sitekpe} #{bc2sitefactor} #{bc2sitekpe} #{bc1sitefactor} #{bc1sitekpe} #{f1sitefactor} #{f1sitekpe} #{nssitefactor} #{nssitekpe}`
 			array = []
 			puts output
