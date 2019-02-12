@@ -1,0 +1,17 @@
+<%= form_with(model: projline, local: true) do |form| %>
+  <% if projline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(projline.errors.count, "error") %> prohibited this projline from being saved:</h2>
+
+      <ul>
+      <% projline.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

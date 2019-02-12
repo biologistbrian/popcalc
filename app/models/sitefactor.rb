@@ -1,0 +1,2 @@
+class Sitefactor < ApplicationRecord
+end

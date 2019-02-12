@@ -1,0 +1,17 @@
+<%= form_with(model: sitefactor, local: true) do |form| %>
+  <% if sitefactor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sitefactor.errors.count, "error") %> prohibited this sitefactor from being saved:</h2>
+
+      <ul>
+      <% sitefactor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

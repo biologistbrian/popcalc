@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kernelperears</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kernelperears.each do |kernelperear| %>
+      <tr>
+        <td><%= link_to 'Show', kernelperear %></td>
+        <td><%= link_to 'Edit', edit_kernelperear_path(kernelperear) %></td>
+        <td><%= link_to 'Destroy', kernelperear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kernelperear', new_kernelperear_path %>

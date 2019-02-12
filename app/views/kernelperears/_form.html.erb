@@ -1,0 +1,17 @@
+<%= form_with(model: kernelperear, local: true) do |form| %>
+  <% if kernelperear.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kernelperear.errors.count, "error") %> prohibited this kernelperear from being saved:</h2>
+
+      <ul>
+      <% kernelperear.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

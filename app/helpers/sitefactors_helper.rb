@@ -1,0 +1,2 @@
+module SitefactorsHelper
+end

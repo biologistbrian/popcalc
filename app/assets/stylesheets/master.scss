@@ -1,0 +1,174 @@
+@import "bootstrap";
+
+/* Dropdown Button */
+
+.navbar-brand:hover {
+  background-color: #364046;
+}
+
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding-bottom: 5px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #364046;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float:left;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+button > a {
+  color:white;
+}
+button > a.hover {
+  color:white;
+  underline: none;
+}
+.btn-primary {
+background-color: #364046 !important;
+border-color: #364046 !important;
+}
+
+.navbar-inverse { background-color: #364046 !important; 
+border-color: #364046 !important; 
+} 
+qr-canvas {
+display: none;
+}
+result {
+border: solid;
+border-width: 1px 1px 1px 1px;
+padding: 20px;
+width: 70%;
+}
+/* The side navigation menu */
+.picklebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #364046;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the picklebar */
+}
+
+/* The navigation menu links */
+.picklebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20eh;
+    color: white;
+    display: block;
+
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.picklebar a:hover {
+    color: white;
+    background-color: #364046;
+}
+
+/* Position and style the close button (top right corner) */
+.picklebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.picklebar hr {
+  border-color: white;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the picklebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .picklebar {padding-top: 15px;}
+    .picklebar a {font-size: 18px;}
+}
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top:10px;
+  margin-bottom:15px;
+  padding:20px;
+
+}
+.graph-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top:10px;
+  margin-bottom:15px;
+  padding:0px;
+
+}
+
+body {
+  background-color: #ececec;
+}
+
+
+/* -------------------
+  Table style
+*/
+
+table {
+  background-color: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  background-color: #364046;
+  color: white;
+}
+
+a.nav-link {
+  color: white !important;
+}

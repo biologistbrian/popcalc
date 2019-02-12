@@ -1,0 +1,2 @@
+class Kernelperear < ApplicationRecord
+end
