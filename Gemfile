@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| "git@github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# gem 'rb-readline'
 gem 'rails_12factor', group: :production
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.11.1'
@@ -56,7 +57,7 @@ gem 'best_in_place', '~> 3.0.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger consol
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
