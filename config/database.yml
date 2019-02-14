@@ -86,10 +86,10 @@ production:
   <<: *default
   adapter: postgresql
   encoding: utf8   
-  database: <%= ENV['RDS_DB_NAME'] %>   
-  username: <%= ENV['RDS_USERNAME'] %>   
-  password: <%= ENV['RDS_PASSWORD'] %>   
-  host: <%= ENV['RDS_HOSTNAME'] %>   
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
   # username: popcalc
   # password: <%= ENV['POPCALC_DATABASE_PASSWORD'] %>

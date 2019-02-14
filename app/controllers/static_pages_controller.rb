@@ -6,7 +6,6 @@ class StaticPagesController < ApplicationController
 	def runscript
 		@projlines = Projline.where(b1pop: nil).each do |proj|
 			initrecovery = (1.000-proj.neisValue)*0.500+proj.neisValue
-
 			if proj.targetSelfingGen.eql?("B4")
 				bc4target = proj.targetRprecoveryThreshold
 			elsif proj.targetSelfingGen.eql?("B3")
