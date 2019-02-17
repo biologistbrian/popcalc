@@ -98,7 +98,7 @@ $( document ).on('turbolinks:load', function() {
     pagingType: "simple",
     bDestroy: true,
   });
-    $("div.toolbar").html("<div class='pull-left'><h3 style='font-family: sans-serif;'>Staging Data</h3></div><div class='pull-right'><div class='dropdown'><button onclick='myFunction()' class='dropbtn btn btn-primary'><i style='color:#45c4af; font-size:15px;' class='fa fa-caret-down'></i> Options</button><div id='myDropdown' class='dropdown-content'><a href='#bingoModal' data-toggle='modal' data-target='#bingoModal' style='color:white'><i style='color:#45c4af; font-size:15px;' class='fa fa-upload'></i> Import New </a><a href='#' id='export' role='button' style='color: white;'><i style='color:#45c4af; font-size:15px;' class='fa fa-file'></i> Export Results</a></div></div></div>");
+    $("div.toolbar").html("<div class='pull-left'><h3 style='font-family: sans-serif;'>Staging Data</h3></div><div class='pull-right'><div class='dropdown'><button onclick='myFunction()' class='dropbtn btn btn-primary'><i style='color:#45c4af; font-size:15px;' class='fa fa-caret-down'></i> Options</button><div id='myDropdown' class='dropdown-content'><a href='#bingoModal' data-toggle='modal' data-target='#bingoModal' style='color:white'><i style='color:#45c4af; font-size:15px;' class='fa fa-upload'></i> Import New </a>");
     
 function exportTableToCSV($table, filename) {
                 var $headers = $table.find('tr:has(th)')
@@ -195,7 +195,7 @@ window.onclick = function(event) {
         </button>
       </div>
       <div class="modal-body">
-        <%= link_to "Download Upload Template", "#" %>
+        <%= link_to "Download Upload Template", download_template_path %>
         <br />
         <%= form_tag import_projlines_path, multipart: true do %>
           <%= file_field_tag :file %><br />

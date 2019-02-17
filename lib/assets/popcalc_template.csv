@@ -1,0 +1,6 @@
+PIDTC,Job Name (Group of Projects),Crop,Traits From Donor,Neis Value,RP Recovery to Self (0.XX format),Target Selfing Backcross Generation,Certainty Level,F3 IEs for Handoff,New start location,F1 location,B1 location,B2 location,B3 location,B4 location,F2 location
+16NA0002,thisjob,corn,BT11;GA21;MIR162,0.6,0.95,B3,0.999,6,Arica,Arica,Slater,Slater,Slater,Slater,Slater
+16NA0008,thisjob,corn,BT11;GA21;MIR162,0.8,0.95,B3,0.999,6,Arica,Arica,Slater,Slater,Slater,Slater,Slater
+16NA0002,thisjob,corn,BT11;GA21;MIR162,0.7,0.95,B4,0.999,6,Arica,Arica,Slater,Slater,Slater,Slater,Slater
+16NA0002,thisjob,corn,BT11;GA21;MIR162,0.7,0.95,B3,0.999,6,Arica,Arica,Slater,Slater,Slater,Slater,Slater
+16NA0008,thisjob,corn,BT11;GA21;MIR162,0.7,0.95,B2,0.999,6,Arica,Arica,Slater,Slater,Slater,Slater,Slater

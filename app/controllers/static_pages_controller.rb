@@ -72,5 +72,10 @@ class StaticPagesController < ApplicationController
 	def results
 		@projlines1 = Projline.where.not(f2pop: nil).order('id ASC')
 	end
+	def download_template
+		send_file "#{Rails.root}/lib/assets/popcalc_template.csv", type: "application/csv", x_sendfile: true
+
+	end
+
 
 end
