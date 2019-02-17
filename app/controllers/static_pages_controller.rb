@@ -67,6 +67,10 @@ class StaticPagesController < ApplicationController
 			puts(bc3target)
 			puts(bc4target)
 		end
-		redirect_to root_path
+		redirect_to results_path, notice: "Calculator ran successfully, see results below"
 	end	
+	def results
+		@projlines1 = Projline.where.not(f2pop: nil).order('id ASC')
+	end
+
 end

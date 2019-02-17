@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+<% if notice.present? %>
+
+  <p class="notice" style="color:white;"><%= notice %></p><% end %>
+  <% if alert.present? %>
+
+  <p class="alert" style="color:white;"><%= alert %></p><% end %>
     <%= yield %>
   </body>
 </html>

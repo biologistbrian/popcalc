@@ -1,7 +1,6 @@
 <center>
-<div class='booyah-box col-10' style="height: 100vh;">
-
-  <table id="bingo1" class="display nowrap" title="Project List">
+<div class='booyah-box col-10'  style="height: 100vh;">
+  <table id="bingo" class="display nowrap" title="Results">
     <thead>
       <tr>
         <th>ID</th>
@@ -21,12 +20,20 @@
         <th>B3 Site</th>
         <th>B4 Site</th>
         <th>F2 Site</th>
+        <th>NS Population</th>
+        <th>F1 Population</th>
+        <th>B1 Population</th>
+        <th>B2 Population</th>
+        <th>B3 Population</th>
+        <th>B4 Population</th>
+        <th>F2 Population</th>
       </tr>
     </thead>
     <tbody>
-      <% @projlines.each do |p| %>
+      <% @projlines1.each do |p| %>
         <tr>
-          <td><%= p.id %></td>
+                    <td><%= p.id %></td>
+
           <td><%= p.pidtc %></td>
           <td><%= p.jobName %></td>
           <td><%= p.crop %></td>
@@ -43,6 +50,13 @@
           <td><%= p.bc3Site %></td>
           <td><%= p.bc4Site %></td>
           <td><%= p.f2Site %></td>
+          <td><%= p.nspop %></td>
+          <td><%= p.f1pop %></td>
+          <td><%= p.b1pop %></td>
+          <td><%= p.b2pop %></td>
+          <td><%= p.b3pop %></td>
+          <td><%= p.b4pop %></td>
+          <td><%= p.f2pop %></td>
 
         </tr>
       <% end %>
@@ -55,17 +69,7 @@
     <span id="totalRows"> Total
     </span>
   </span>
-  <br />
-  <br />
-  <%= button_to "Run Calculator", runscript_path, class: 'btn btn-primary' %>
-</div>
-
-<br />
-<br />
-
-
-
-
+  </div>
 </center>
 <script>
 $(function(){
@@ -82,8 +86,8 @@ $( document ).on('turbolinks:load', function() {
   jQuery(".best_in_place").best_in_place();
   var totalRows = $('tr').length - $('thead>tr').length;
   document.getElementById("totalRows").innerHTML=totalRows;
-  $('#bingo1').excelTableFilter();
-  $('#bingo1').DataTable( {
+  $('#bingo').excelTableFilter();
+  $('#bingo').DataTable( {
     colReorder: true,
     "bSort" : false,
     "paging": false,
@@ -98,7 +102,7 @@ $( document ).on('turbolinks:load', function() {
     pagingType: "simple",
     bDestroy: true,
   });
-    $("div.toolbar").html("<div class='pull-left'><h3 style='font-family: sans-serif;'>Staging Data</h3></div><div class='pull-right'><div class='dropdown'><button onclick='myFunction()' class='dropbtn btn btn-primary'><i style='color:#45c4af; font-size:15px;' class='fa fa-caret-down'></i> Options</button><div id='myDropdown' class='dropdown-content'><a href='#bingoModal' data-toggle='modal' data-target='#bingoModal' style='color:white'><i style='color:#45c4af; font-size:15px;' class='fa fa-upload'></i> Import New </a><a href='#' id='export' role='button' style='color: white;'><i style='color:#45c4af; font-size:15px;' class='fa fa-file'></i> Export Results</a></div></div></div>");
+    $("div.toolbar").html("<div class='pull-left'><h3>Results</h3></div><div class='pull-right'><div class='dropdown'><button onclick='myFunction()' class='dropbtn btn btn-primary'><i style='color:#45c4af; font-size:15px;' class='fa fa-caret-down'></i> Options</button><div id='myDropdown' class='dropdown-content'><a href='#' id='export' role='button' style='color: white;'><i style='color:#45c4af; font-size:15px;' class='fa fa-file'></i>Export Results</a></div></div></div><br /><br />");
     
 function exportTableToCSV($table, filename) {
                 var $headers = $table.find('tr:has(th)')
@@ -156,7 +160,7 @@ function exportTableToCSV($table, filename) {
                 outputFile = outputFile.replace('.csv','') + '.csv'
                  
                 // CSV
-                exportTableToCSV.apply(this, [$('#bingo1'), outputFile]);
+                exportTableToCSV.apply(this, [$('#bingo'), outputFile]);
                 
                 // IF CSV, don't do event.preventDefault() or return false
                 // We actually need this to be a typical hyperlink
@@ -184,24 +188,3 @@ window.onclick = function(event) {
   }
 };
 </script>
-<!-- Modal -->
-<div class="modal fade" id="bingoModal" tabindex="-1" role="dialog" aria-labelledby="bingoModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="bingoModalLabel">Import Project Data</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= link_to "Download Upload Template", "#" %>
-        <br />
-        <%= form_tag import_projlines_path, multipart: true do %>
-          <%= file_field_tag :file %><br />
-          <%= submit_tag "Upload!" %>
-        <% end %>
-      </div>      
-    </div>
-  </div>
-</div>

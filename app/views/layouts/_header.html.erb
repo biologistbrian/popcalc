@@ -1,0 +1,46 @@
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the picklebar to sit on top of the page -->
+<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top" style="background-color: #04122C !important;">
+  <!-- Use any element to open the picklebar -->
+  <div class="row align-items-center">
+    <button class="navbar-toggler navbar-toggler-left" style="-webkit-align-self: center;align-self: center;" ><span onclick="openNavi()"><span class="navbar-toggler-icon" style="height:45px"></span></span></button>
+    <a class="navbar-brand mx-auto" href="/">
+      <%= image_tag "logo1.png", height: "65px" %>
+    </a>
+  </div>
+  <div id="mypicklebar" class="picklebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavi()">&times;</a>
+    <div class="row justify-content-center">
+      <div class="col" style="max-width: 450px">
+        <div class="row justify-content-start">
+          <div class="col-4">
+            <center><i style="color:white; font-size:40px" class="fa fa-list-ol"></i></center>
+          </div>
+          <div class="col-8">
+            <%= link_to 'Load Data', root_path, class: 'nav-link' %>
+          </div>
+        </div>
+        <hr>
+        <div class="row justify-content-start">
+          <div class="col-4">
+            <center><i style="color:white; font-size:40px" class="fa fa-calculator"></i></center>
+          </div>
+          <div class="col-8">
+            <%= link_to 'Results', results_path, class: 'nav-link' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+/* Open the picklebar */
+function openNavi() {
+    document.getElementById("mypicklebar").style.width = "40%";
+}
+
+/* Close/hide the picklebar */
+function closeNavi() {
+    document.getElementById("mypicklebar").style.width = "0";
+}
+</script>

@@ -1,11 +1,24 @@
 @import "bootstrap";
-
+@import "font-awesome";
 /* Dropdown Button */
-
-.navbar-brand:hover {
-  background-color: #364046;
+th {
+  padding: 20px;
+  padding-bottom: 10px !important;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+td {
+  text-align: center;
+}
+body {
+background: rgb(4,18,44);
+background: linear-gradient(174deg, rgba(4,18,44,1) 25%, rgba(14,9,121,1) 50%, rgba(255,0,254,1) 100%);
+margin: 0px !important;  
 }
 
+.navbar-brand:hover {
+  background-color: #04122C;
+}
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
@@ -24,7 +37,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #364046;
+    background-color: #04122C;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -54,12 +67,12 @@ button > a.hover {
   underline: none;
 }
 .btn-primary {
-background-color: #364046 !important;
-border-color: #364046 !important;
+background-color: #04122C !important;
+border-color: #04122C !important;
 }
 
-.navbar-inverse { background-color: #364046 !important; 
-border-color: #364046 !important; 
+.navbar-inverse { background-color: #04122C !important; 
+border-color: #04122C !important; 
 } 
 qr-canvas {
 display: none;
@@ -78,7 +91,7 @@ width: 70%;
     z-index: 100; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #364046;
+    background-color: #04122C;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the picklebar */
@@ -98,7 +111,7 @@ width: 70%;
 /* When you mouse over the navigation links, change their color */
 .picklebar a:hover {
     color: white;
-    background-color: #364046;
+    background-color: #04122C;
 }
 
 /* Position and style the close button (top right corner) */
@@ -165,7 +178,7 @@ table {
 }
 
 th {
-  background-color: #364046;
+  background-color: #04122C;
   color: white;
 }
 
