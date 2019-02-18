@@ -13,7 +13,8 @@ td {
 body {
 background: rgb(4,18,44);
 background: linear-gradient(174deg, rgba(4,18,44,1) 25%, rgba(14,9,121,1) 50%, rgba(255,0,254,1) 100%);
-margin: 0px !important;  
+margin: 0px !important; 
+min-height: 100vh; 
 }
 
 .navbar-brand:hover {
