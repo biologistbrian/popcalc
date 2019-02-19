@@ -26,13 +26,15 @@ f1sitekpe = as.numeric(args[20])
 nssitefactor = as.numeric(args[21])
 nssitekpe = as.numeric(args[20])
 vector <- character()
+# create a function and make this code more DRY
 # pop = ceiling(((2*(desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(desired-0.5))))/(2*frequency))
 # F2 pop
 f2pop = ceiling(ceiling(((2*(f3desired-0.5)+(qnorm(certainty)**2)*(1-f3frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-f3frequency)**2)+4*(1-f3frequency)*(f3desired-0.5))))/(2*f3frequency))/f3adjustment)
 vector <- c(vector, f2pop)
 # b4 pop
 if (selgen == 4) {
-	thresholds <- c(.99, bc3target)
+	# instead of assigning thresholds, generate an actual curve
+	thresholds <- seq(from = bc3target, to = 0.98, by = 0.0001)
 	righttail = 1-pnorm(bc4target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc4ears = ceiling(f2pop/bc4sitekpe)
 	bc4desired = ceiling(bc4ears/righttail)
@@ -42,13 +44,13 @@ if (selgen == 4) {
 vector <- c(vector, bc4pop)
 # b3 pop
 if (selgen == 3) {
-	thresholds <- c(.99, bc2target)
+	thresholds <- seq(from = bc2target, to = 0.98, by = 0.0001)
 	righttail = 1-pnorm(bc3target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc3ears = ceiling(f2pop/bc3sitekpe)
 	bc3desired = ceiling(bc3ears/righttail)
  	bc3pop = ceiling(ceiling(((2*(bc3desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc3desired-0.5))))/(2*frequency))/bc3sitefactor)
 } else if (selgen == 4) {
-	thresholds <- c(bc4target, bc2target)
+	thresholds <- seq(from = bc2target, to = bc4target, by = 0.0001)
 	righttail = 1-pnorm(bc3target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc3ears = ceiling(bc4pop/bc3sitekpe)
 	bc3desired = ceiling(bc3ears/righttail)
@@ -59,13 +61,13 @@ if (selgen == 3) {
 vector <- c(vector, bc3pop)
 # b2 pop
 if (selgen == 2) {
-	thresholds <- c(.99, bc1target)
+	thresholds <- seq(from = bc1target, to = 0.98, by = 0.0001)
 	righttail = 1-pnorm(bc2target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc2ears = ceiling(f2pop/bc2sitekpe)
 	bc2desired = ceiling(bc2ears/righttail)
  	bc2pop = ceiling(ceiling(((2*(bc2desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc2desired-0.5))))/(2*frequency))/bc2sitefactor)
 } else {
-	thresholds <- c(bc3target, bc1target)
+	thresholds <- seq(from = bc1target, to = bc3target, by = 0.0001)
 	righttail = 1-pnorm(bc2target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc2ears = ceiling(bc3pop/bc2sitekpe)
 	bc2desired = ceiling(bc2ears/righttail)
@@ -74,13 +76,13 @@ if (selgen == 2) {
 vector <- c(vector, bc2pop)
 # b1 pop
 if (selgen == 1) {
-	thresholds <- c(.99, f1RPrecovery)
+	thresholds <- seq(from = f1RPrecovery, to = 0.98, by = 0.0001)
 	righttail = 1-pnorm(bc1target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc1ears = ceiling(f2pop/bc1sitekpe)
 	bc1desired = ceiling(bc1ears/righttail)
  	bc1pop = ceiling(ceiling(((2*(bc1desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc1desired-0.5))))/(2*frequency))/bc1sitefactor)
 } else {
-	thresholds <- c(bc2target, f1RPrecovery)
+	thresholds <- seq(from = f1RPrecovery, to = bc2target, by = 0.0001)
 	righttail = 1-pnorm(bc1target, mean = mean(thresholds), sd = sd(thresholds))[1]
 	bc1ears = ceiling(bc2pop/bc1sitekpe)
 	bc1desired = ceiling(bc1ears/righttail)
