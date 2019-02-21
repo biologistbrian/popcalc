@@ -19,17 +19,17 @@ class StaticPagesController < ApplicationController
 			if proj.targetSelfingGen.eql?("B1")
 				bc1target = proj.targetRprecoveryThreshold
 			elsif proj.targetSelfingGen.eql?("B2")
-				bc1target = (eval("bc" + proj.targetSelfingGen.split(//).last + "target") - initrecovery) * 0.5 + initrecovery
+				bc1target = (eval("bc" + proj.targetSelfingGen.split(//).last + "target") - initrecovery) * 0.4 + initrecovery
 				bc3target = proj.targetRprecoveryThreshold
 				bc4target = proj.targetRprecoveryThreshold
 			elsif proj.targetSelfingGen.eql?("B3")
-				bc1target = (proj.targetRprecoveryThreshold - initrecovery) * 0.50 + initrecovery
+				bc1target = (proj.targetRprecoveryThreshold - initrecovery) * 0.40 + initrecovery
 				bc2target = (proj.targetRprecoveryThreshold - initrecovery) * 0.30 + bc1target
 				bc4target = proj.targetRprecoveryThreshold
 			elsif proj.targetSelfingGen.eql?("B4")
-				bc1target = (proj.targetRprecoveryThreshold - initrecovery) * 0.50 + initrecovery
+				bc1target = (proj.targetRprecoveryThreshold - initrecovery) * 0.40 + initrecovery
 				bc2target = (proj.targetRprecoveryThreshold - initrecovery) * 0.30 + bc1target
-				bc3target = (proj.targetRprecoveryThreshold - initrecovery) * 0.10 + bc2target
+				bc3target = (proj.targetRprecoveryThreshold - initrecovery) * 0.20 + bc2target
 			end
 			bc4target = proj.targetRprecoveryThreshold
 			selgen = proj.targetSelfingGen.split(//).last.to_i
