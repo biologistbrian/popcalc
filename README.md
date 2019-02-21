@@ -8,3 +8,10 @@ If you clone this repo and expect to run the application locally, you'll need th
 
 It can be found here:
 * http://popcalc-prod.m3rcr6tzqx.us-west-2.elasticbeanstalk.com/
+
+Oh hey dipshit, since you can't seem to remember rails c on the eb, it goes like this:
+
+    eb ssh
+    cd /var/app/current
+    sudo su
+    bundle exec rails c
