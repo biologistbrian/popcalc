@@ -17,7 +17,9 @@ class StaticPagesController < ApplicationController
 			end
 			
 			if proj.targetSelfingGen.eql?("B1")
-				bc1target = proj.targetRprecoveryThreshold
+				bc2target = proj.targetRprecoveryThreshold
+				bc3target = proj.targetRprecoveryThreshold
+				bc4target = proj.targetRprecoveryThreshold
 			elsif proj.targetSelfingGen.eql?("B2")
 				bc1target = (eval("bc" + proj.targetSelfingGen.split(//).last + "target") - initrecovery) * 0.4 + initrecovery
 				bc3target = proj.targetRprecoveryThreshold

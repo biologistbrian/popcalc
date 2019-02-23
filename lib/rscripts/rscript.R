@@ -66,12 +66,14 @@ if (selgen == 2) {
 	bc2ears = ceiling(f2pop/bc2sitekpe)
 	bc2desired = ceiling(bc2ears/righttail)
  	bc2pop = ceiling(ceiling(((2*(bc2desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc2desired-0.5))))/(2*frequency))/bc2sitefactor)
+} else if (selgen > 2) {
+    thresholds <- seq(from = bc1target, to = bc3target, by = 0.0001)
+    righttail = 1-pnorm(bc2target, mean = mean(thresholds), sd = sd(thresholds))[1]
+    bc2ears = ceiling(bc3pop/bc2sitekpe)
+    bc2desired = ceiling(bc2ears/righttail)
+    bc2pop = ceiling(ceiling(((2*(bc2desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc2desired-0.5))))/(2*frequency))/bc2sitefactor)
 } else {
-	thresholds <- seq(from = bc1target, to = bc3target, by = 0.0001)
-	righttail = 1-pnorm(bc2target, mean = mean(thresholds), sd = sd(thresholds))[1]
-	bc2ears = ceiling(bc3pop/bc2sitekpe)
-	bc2desired = ceiling(bc2ears/righttail)
-	bc2pop = ceiling(ceiling(((2*(bc2desired-0.5)+(qnorm(certainty)**2)*(1-frequency))+qnorm(certainty)*(sqrt((qnorm(certainty)**2)*((1-frequency)**2)+4*(1-frequency)*(bc2desired-0.5))))/(2*frequency))/bc2sitefactor)
+  	bc2pop = 0
 }
 vector <- c(vector, bc2pop)
 # b1 pop
